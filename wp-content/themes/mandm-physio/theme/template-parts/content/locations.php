@@ -7,12 +7,18 @@
 
     <div>
         <div class="max-w-[800px] mx-auto text-lg text-[#000000] grid grid-cols-1 gap-4">
-            <p>
-                <?php esc_html_e('We have clinics in Leicester and Yeovil, providing convenient access to our physiotherapy services. Each location is equipped with state-of-the-art facilities and staffed by experienced professionals ready to assist you on your path to recovery.', 'mandm-physio'); ?>
-            </p>
-            <p>
-                <?php esc_html_e('Whether you are in Leicester or Yeovil, our team is dedicated to delivering high-quality care tailored to your individual needs. We invite you to visit us at either of our locations to experience the M&M Physio difference.', 'mandm-physio'); ?>
-            </p>
+            <?php
+            $locations = get_posts([
+                'post_type' => 'location_content',
+                'posts_per_page' => -1,
+            ]);
+            foreach ($locations as $post) {
+                $content = get_post_meta($post->ID, 'location_content', true);
+                if ($content) {
+                    echo '<p>' . nl2br(esc_html($content)) . '</p>';
+                }
+            }
+            ?>
         </div>
     </div>
 

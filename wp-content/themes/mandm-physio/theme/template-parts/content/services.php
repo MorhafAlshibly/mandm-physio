@@ -1,46 +1,41 @@
-<?php
-$services = [
-    [
-        'image' => '/2025/06/physiotherapy.jpg',
-        'alt' => __('Physiotherapy services', 'mandm-physio'),
-        'title' => __('Physiotherapy', 'mandm-physio'),
-        'desc' => __('Our physiotherapy services are designed to help you recover from injuries, manage pain, and improve your overall physical health. We offer personalized treatment plans tailored to your specific needs.', 'mandm-physio'),
-    ],
-    [
-        'image' => '/2025/06/massaging.jpg',
-        'alt' => __('Massaging services', 'mandm-physio'),
-        'title' => __('Massaging therapy', 'mandm-physio'),
-        'desc' => __('Our physiotherapy services are designed to help you recover from injuries, manage pain, and improve your overall physical health. We offer personalized treatment plans tailored to your specific needs.', 'mandm-physio'),
-    ],
-    [
-        'image' => '/2025/06/cupping.jpg',
-        'alt' => __('Cupping services', 'mandm-physio'),
-        'title' => __('Cupping therapy', 'mandm-physio'),
-        'desc' => __('Our physiotherapy services are designed to help you recover from injuries, manage pain, and improve your overall physical health. We offer personalized treatment plans tailored to your specific needs.', 'mandm-physio'),
-    ],
-];
-$baseurl = wp_upload_dir()['baseurl'];
-?>
-
 <div id="services" class="grid grid-cols-1 justify-items-center items-center py-30">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-15 md:gap-8 w-full">
-        <?php foreach ($services as $service): ?>
-            <div class="grid col-span-1 grid-cols-1 gap-4">
-                <div>
-                    <img src="<?php echo esc_url($baseurl . $service['image']); ?>"
-                        alt="<?php echo esc_attr($service['alt']); ?>" class="w-full h-auto rounded-lg" />
+
+        <?php
+        $service_query = new WP_Query([
+            'post_type' => 'service',
+            'posts_per_page' => -1,
+        ]);
+        if ($service_query->have_posts()):
+            while ($service_query->have_posts()):
+                $service_query->the_post();
+                $service_name = get_post_meta(get_the_ID(), 'service_name', true);
+                $service_image_id = get_post_meta(get_the_ID(), 'service_image', true);
+                $service_image_url = $service_image_id ? wp_get_attachment_url($service_image_id) : '';
+                $service_desc = get_post_meta(get_the_ID(), 'service_description', true);
+                ?>
+                <div class="grid col-span-1 grid-cols-1 gap-4">
+                    <div>
+                        <?php if ($service_image_url): ?>
+                            <img src="<?php echo esc_url($service_image_url); ?>" alt="<?php echo esc_attr($service_name); ?>"
+                                class="w-full h-auto rounded-lg" />
+                        <?php endif; ?>
+                    </div>
+                    <div class="mt-2">
+                        <h2 class="text-2xl font-[600] text-[#000000]">
+                            <?php echo esc_html($service_name); ?>
+                        </h2>
+                    </div>
+                    <div class="text-lg text-[#999999]">
+                        <p>
+                            <?php echo esc_html($service_desc); ?>
+                        </p>
+                    </div>
                 </div>
-                <div class="mt-2">
-                    <h2 class="text-2xl font-[600] text-[#000000]">
-                        <?php echo esc_html($service['title']); ?>
-                    </h2>
-                </div>
-                <div class="text-lg text-[#999999]">
-                    <p>
-                        <?php echo esc_html($service['desc']); ?>
-                    </p>
-                </div>
-            </div>
-        <?php endforeach; ?>
+                <?php
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        ?>
     </div>
 </div>
