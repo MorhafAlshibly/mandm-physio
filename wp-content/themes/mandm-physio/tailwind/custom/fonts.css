@@ -1,0 +1,16 @@
+/**
+ * Custom `@font-face` rules
+ *
+ * These will be added immediately before Tailwind’s `base` layer.
+ */
+
+/* Add Inter font */
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url("fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype"),
+		url("fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+	font-display: swap;
+}
