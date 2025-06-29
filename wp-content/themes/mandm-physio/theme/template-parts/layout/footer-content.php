@@ -15,8 +15,10 @@
 		<div
 			class="grid grid-cols-1 lg:grid-cols-[300px_auto_300px] w-full gap-8 justify-items-center lg:justify-items-between items-center">
 			<div>
-				<img src="<?php echo esc_url(trailingslashit(wp_upload_dir()['baseurl']) . '2025/06/mandm-physio-nobg.png'); ?>"
-					alt="<?php bloginfo('name'); ?>" class="w-10 h-auto" />
+				<a href="<?php echo esc_url(home_url('/')); ?>">
+					<img src="<?php echo esc_url(trailingslashit(wp_upload_dir()['baseurl']) . '2025/06/mandm-physio-nobg.png'); ?>"
+						alt="<?php bloginfo('name'); ?>" class="w-10 h-auto" />
+				</a>
 			</div>
 			<div class="grid grid-cols-1 justify-items-center">
 				<?php get_template_part("template-parts/content/socials", "socials"); ?>

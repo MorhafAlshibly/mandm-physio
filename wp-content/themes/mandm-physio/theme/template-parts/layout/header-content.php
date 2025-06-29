@@ -12,8 +12,10 @@
 <header class="sticky top-0 bg-white z-40">
 	<div class="grid grid-cols-[125px_1fr_125px] items-center gap-8 w-full">
 		<div>
-			<img src="<?php echo esc_url(trailingslashit(wp_upload_dir()['baseurl']) . '2025/06/mandm-physio-nobg.png'); ?>"
-				alt="<?php bloginfo('name'); ?>" class="w-20 h-auto" />
+			<a href="<?php echo esc_url(home_url('/')); ?>">
+				<img src="<?php echo esc_url(trailingslashit(wp_upload_dir()['baseurl']) . '2025/06/mandm-physio-nobg.png'); ?>"
+					alt="<?php bloginfo('name'); ?>" class="w-20 h-auto" />
+			</a>
 		</div>
 
 		<div class="grid justify-items-center items-center w-full">
@@ -51,7 +53,7 @@
 		<div class="justify-items-end">
 			<div>
 				<button class="bg-black text-white rounded-full px-6 py-3 hover:bg-gray-900 transition">
-					<a href="<?php echo esc_url(home_url('/')); ?>">
+					<a href="<?php echo esc_url(home_url('/booking')); ?>">
 						<?php esc_html_e('Book Now', 'mandm-physio'); ?>
 					</a>
 				</button>
