@@ -11,11 +11,34 @@
             </h1>
         </div>
     </div>
-    <div class="grid grid-cols-1 mt-20">
-        <div>
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/hero.jpg'); ?>"
-                alt="<?php esc_attr_e('Hero Image', 'mandm-physio'); ?>" class="w-full h-auto rounded-lg" />
-        </div>
-    </div>
+
+
+
+    <?php
+    $hero_query = new WP_Query([
+        'post_type' => 'hero_image',
+        'posts_per_page' => -1,
+    ]);
+    if ($hero_query->have_posts()):
+        while ($hero_query->have_posts()):
+            $hero_query->the_post();
+            $hero_image_id = get_post_meta(get_the_ID(), 'hero_image', true);
+            $hero_image_url = $hero_image_id ? wp_get_attachment_url($hero_image_id) : '';
+            ?>
+
+            <div class="grid grid-cols-1 mt-20">
+                <div>
+                    <?php if ($hero_image_url): ?>
+                        <img src="<?php echo esc_url($hero_image_url); ?>" alt="<?php echo esc_attr("Hero image"); ?>"
+                            class="w-full h-auto rounded-lg" />
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php
+        endwhile;
+        wp_reset_postdata();
+    endif;
+    ?>
+
 
 </div>
