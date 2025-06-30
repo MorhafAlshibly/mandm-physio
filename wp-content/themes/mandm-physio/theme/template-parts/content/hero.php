@@ -11,9 +11,9 @@
             </h1>
         </div>
     </div>
-    <div class="grid grid-cols-1 mt-17">
+    <div class="grid grid-cols-1 mt-20">
         <div>
-            <img src="<?php echo esc_url(wp_upload_dir()['baseurl'] . '/2025/06/hero.jpg'); ?>"
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/hero.jpg'); ?>"
                 alt="<?php esc_attr_e('Hero Image', 'mandm-physio'); ?>" class="w-full h-auto rounded-lg" />
         </div>
     </div>
