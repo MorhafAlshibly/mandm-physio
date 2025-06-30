@@ -1,0 +1,39 @@
+name: Build and Deploy to cPanel
+
+on:
+   push:
+      branches:
+         - main
+
+jobs:
+   build-and-deploy:
+      runs-on: ubuntu-latest
+
+      steps:
+         - uses: actions/checkout@v4
+
+         - name: Use Node.js
+           uses: actions/setup-node@v4
+           with:
+              node-version: "lts/*"
+
+         - name: Go into theme directory
+           run: cd wp-content/themes/mandm-physio
+
+         - name: Install dependencies
+           run: npm install
+
+         - name: Build production assets
+           run: npm run bundle
+
+         - name: Unzip theme bundle
+           run: unzip -o mandm-physio.zip -d ./built-theme
+
+         - name: FTP Deploy to cPanel
+           uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+           with:
+              server: ${{ secrets.FTP_SERVER }}
+              username: ${{ secrets.FTP_USERNAME }}
+              password: ${{ secrets.FTP_PASSWORD }}
+              local-dir: ./built-theme/mandm-physio
+              server-dir: ~/themes/mandm-physio
