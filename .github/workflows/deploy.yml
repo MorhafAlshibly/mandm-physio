@@ -31,4 +31,3 @@ jobs:
               password: ${{ secrets.FTP_PASSWORD }}
               local-dir: ./wp-content/
               server-dir: /mandm-physio/wp-content/
-              dangerous-clean-slate: true
