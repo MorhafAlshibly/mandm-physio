@@ -13,8 +13,8 @@
 	<div class="grid grid-cols-[125px_1fr_125px] items-center gap-8 w-full">
 		<div>
 			<a href="<?php echo esc_url(home_url('/')); ?>">
-				<img src="<?php echo esc_url(trailingslashit(wp_upload_dir()['baseurl']) . '2025/06/mandm-physio-nobg.png'); ?>"
-					alt="<?php bloginfo('name'); ?>" class="w-20 h-auto" />
+				<img src="<?php echo esc_url(get_site_icon_url()); ?>" alt="<?php bloginfo('name'); ?>"
+					class="w-20 h-auto" />
 			</a>
 		</div>
 

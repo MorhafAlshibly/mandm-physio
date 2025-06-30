@@ -1,4 +1,4 @@
-<div id="aboutus" class="grid grid-cols-1 justify-items-start items-center py-30 gap-6">
+<div id="aboutus" class="scroll-mt-30 grid grid-cols-1 justify-items-start items-center gap-6">
     <div>
         <h2 class="text-2xl font-[700] text-center text-[#000000]">
             <?php esc_html_e('About Us', 'mandm-physio'); ?>

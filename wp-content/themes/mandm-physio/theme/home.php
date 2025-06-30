@@ -14,13 +14,12 @@
 get_header();
 ?>
 
-<main>
+<main class="grid grid-cols-1 gap-60">
 	<?php get_template_part('template-parts/content/hero', 'hero'); ?>
 	<?php get_template_part("template-parts/content/aboutus", "aboutus"); ?>
 	<?php get_template_part("template-parts/content/services", "services"); ?>
 	<?php get_template_part("template-parts/content/testimonials", "testimonials"); ?>
 	<?php get_template_part("template-parts/content/locations", "locations"); ?>
-	<div class="bg-[#EEEEEE] h-0.5 w-full"></div>
 	<?php get_template_part("template-parts/content/contact", "contact"); ?>
 </main>
 

@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 justify-items-center items-center py-15">
+<div class="scroll-mt-30 grid grid-cols-1 justify-items-center items-center">
     <div class="grid grid-cols-1 gap-2">
         <div>
             <h1 class="text-4xl font-[700] text-center text-[#000000]">

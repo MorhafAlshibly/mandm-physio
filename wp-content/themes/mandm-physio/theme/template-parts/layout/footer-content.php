@@ -10,14 +10,14 @@
 ?>
 
 <footer>
-	<div class="grid grid-cols-1 justify-items-start items-center w-full py-15 gap-10">
+	<div class="grid grid-cols-1 justify-items-start items-center w-full pb-15 gap-10">
 		<div class="bg-[#EEEEEE] h-0.5 w-full"></div>
 		<div
 			class="grid grid-cols-1 lg:grid-cols-[300px_auto_300px] w-full gap-8 justify-items-center lg:justify-items-between items-center">
 			<div>
 				<a href="<?php echo esc_url(home_url('/')); ?>">
-					<img src="<?php echo esc_url(trailingslashit(wp_upload_dir()['baseurl']) . '2025/06/mandm-physio-nobg.png'); ?>"
-						alt="<?php bloginfo('name'); ?>" class="w-10 h-auto" />
+					<img src="<?php echo esc_url(get_site_icon_url()); ?>" alt="<?php bloginfo('name'); ?>"
+						class="w-10 h-auto" />
 				</a>
 			</div>
 			<div class="grid grid-cols-1 justify-items-center">

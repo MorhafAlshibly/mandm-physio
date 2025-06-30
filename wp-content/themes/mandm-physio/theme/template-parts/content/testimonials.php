@@ -1,4 +1,4 @@
-<div id="testimonials" class="grid grid-cols-1 justify-items-center items-center py-30 gap-15">
+<div id="testimonials" class="scroll-mt-30 grid grid-cols-1 justify-items-center items-center gap-15">
 
     <div class="grid grid-cols-1 justify-items-center items-center">
         <div>
@@ -56,6 +56,4 @@
         endif;
         ?>
     </div>
-</div>
-
 </div>

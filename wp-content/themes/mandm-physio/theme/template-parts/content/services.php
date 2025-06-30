@@ -1,4 +1,4 @@
-<div id="services" class="grid grid-cols-1 justify-items-center items-center py-30">
+<div id="services" class="scroll-mt-30 grid grid-cols-1 justify-items-center items-center">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-15 md:gap-8 w-full">
 
         <?php

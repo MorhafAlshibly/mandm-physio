@@ -1,5 +1,5 @@
-<div id="contact" class="grid grid-cols-1 justify-items-center items-center py-30">
-
+<div id="contact" class="scroll-mt-30 grid grid-cols-1 justify-items-center items-center gap-20">
+    <div class="bg-[#EEEEEE] h-0.5 w-full"></div>
     <div class="grid grid-cols-1 gap-10 max-w-[700px] w-full mx-auto">
         <div class="grid grid-cols-1 text-3xl font-[700] text-center">
             <div>
