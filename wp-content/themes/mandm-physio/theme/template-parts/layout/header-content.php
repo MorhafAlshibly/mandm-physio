@@ -52,7 +52,8 @@
 
 		<div class="justify-items-end">
 			<div>
-				<button class="bg-black text-white rounded-full px-6 py-3 hover:bg-gray-900 transition">
+				<button
+					class="bg-black text-white rounded-full px-6 py-3 hover:bg-gray-900 transition whitespace-nowrap">
 					<a href="<?php echo esc_url(home_url('/booking')); ?>">
 						<?php esc_html_e('Book Now', 'mandm-physio'); ?>
 					</a>
