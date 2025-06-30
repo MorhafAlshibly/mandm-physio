@@ -23,7 +23,7 @@
 		"production:esbuild": "npm run development:esbuild -- --minify",
 		"production": "run-p \"production:**\"",
 		"prod": "npm run production",
-		"zip": "node node_scripts/zip.js mandm-physio",
+		"zip": "zip -r mandm-physio.zip theme/ -x '*.DS_Store'",
 		"bundle": "run-s production zip"
 	},
 	"devDependencies": {
