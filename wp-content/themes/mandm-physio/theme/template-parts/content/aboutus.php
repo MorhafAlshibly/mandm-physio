@@ -1,11 +1,11 @@
 <div id="aboutus" class="scroll-mt-30 grid grid-cols-1 justify-items-start items-center gap-6">
-    <div>
+    <div data-aos="fade-right">
         <h2 class="text-2xl font-[700] text-center text-[#000000]">
             <?php esc_html_e('About Us', 'mandm-physio'); ?>
         </h2>
     </div>
 
-    <div>
+    <div data-aos="fade-right">
         <div class="max-w-[800px] mx-auto text-lg text-[#000000] grid grid-cols-1 gap-4">
             <?php
             $aboutus = get_posts([
@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <div>
+    <div data-aos="fade-right">
         <?php get_template_part("template-parts/content/socials", "socials"); ?>
     </div>
 

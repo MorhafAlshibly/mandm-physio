@@ -1,20 +1,20 @@
 <div id="contact" class="scroll-mt-30 grid grid-cols-1 justify-items-center items-center gap-20">
-    <div class="bg-[#EEEEEE] h-0.5 w-full"></div>
+    <div data-aos="fade-in" class="bg-[#EEEEEE] h-0.5 w-full"></div>
     <div class="grid grid-cols-1 gap-10 max-w-[700px] w-full mx-auto">
         <div class="grid grid-cols-1 text-3xl font-[700] text-center">
-            <div>
+            <div data-aos="fade-right">
                 <h1 class="text-[#000000]">
                     <?php esc_html_e('Contact Us', 'mandm-physio'); ?>
                 </h1>
             </div>
-            <div>
+            <div data-aos="fade-left">
                 <h1 class="text-[#999999]">
                     <?php esc_html_e('We\'re here to help', 'mandm-physio'); ?>
                 </h1>
             </div>
         </div>
 
-        <div class="">
+        <div data-aos="fade-up">
             <style>
                 form[aria-label="Contact form"] input[type='text'],
                 form[aria-label="Contact form"] input[type='email'],

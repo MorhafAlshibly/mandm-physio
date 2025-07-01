@@ -1,13 +1,13 @@
 <div id="testimonials" class="scroll-mt-30 grid grid-cols-1 justify-items-center items-center gap-15">
 
     <div class="grid grid-cols-1 justify-items-center items-center">
-        <div>
+        <div data-aos="fade-right">
             <h2 class="text-3xl font-[700] text-center text-[#000000]">
                 <?php esc_html_e('What clients say', 'mandm-physio'); ?>
             </h2>
         </div>
 
-        <div>
+        <div data-aos="fade-left">
             <h2 class="text-3xl font-[700] text-center text-[#999999]">
                 <?php esc_html_e('Real stories and experiences.', 'mandm-physio'); ?>
             </h2>
@@ -29,7 +29,7 @@
                 $clinic_location = get_post_meta(get_the_ID(), 'clinic_location', true);
                 $testimonial = get_post_meta(get_the_ID(), 'testimonial', true);
                 ?>
-                <div class="grid grid-cols-1">
+                <div data-aos="fade-up" class="grid grid-cols-1">
                     <div class="bg-[#F5F5F5] p-6 rounded-lg aspect-square">
                         <div class="grid grid-rows-1 gap-4 justify-items-between h-full text-md font-medium ">
                             <div class="text-[#777777]">
